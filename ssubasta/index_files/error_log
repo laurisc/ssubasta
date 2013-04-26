@@ -1,0 +1,161 @@
+[21-Mar-2013 13:19:11] PHP Warning:  mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: Access denied for user 'root'@'localhost' (using password: NO) in /home/essimgas/public_html/ssubasta/login.php on line 27
+[21-Mar-2013 13:19:11] PHP Warning:  mysql_select_db() expects parameter 2 to be resource, boolean given in /home/essimgas/public_html/ssubasta/login.php on line 28
+[21-Mar-2013 13:19:11] PHP Warning:  mysql_query() [<a href='function.mysql-query'>function.mysql-query</a>]: Access denied for user 'essimgas'@'localhost' (using password: NO) in /home/essimgas/public_html/ssubasta/login.php on line 30
+[21-Mar-2013 13:19:11] PHP Warning:  mysql_query() [<a href='function.mysql-query'>function.mysql-query</a>]: A link to the server could not be established in /home/essimgas/public_html/ssubasta/login.php on line 30
+[21-Mar-2013 13:19:11] PHP Warning:  mysql_close() expects parameter 1 to be resource, boolean given in /home/essimgas/public_html/ssubasta/login.php on line 31
+[21-Mar-2013 13:19:11] PHP Warning:  mysql_num_rows() expects parameter 1 to be resource, boolean given in /home/essimgas/public_html/ssubasta/login.php on line 32
+[21-Mar-2013 14:22:37] PHP Warning:  mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: Access denied for user 'essimgas_simulac'@'localhost' (using password: YES) in /home/essimgas/public_html/ssubasta/lib/class.db.php on line 8
+[21-Mar-2013 14:22:37] PHP Warning:  mysql_select_db() expects parameter 2 to be resource, boolean given in /home/essimgas/public_html/ssubasta/lib/class.db.php on line 13
+[21-Mar-2013 14:22:37] PHP Warning:  session_start() [<a href='function.session-start'>function.session-start</a>]: Cannot send session cache limiter - headers already sent (output started at /home/essimgas/public_html/ssubasta/lib/class.db.php:8) in /home/essimgas/public_html/ssubasta/lib/class.sesion.php on line 5
+[21-Mar-2013 15:06:44] PHP Warning:  mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: Access denied for user 'essimgas_simulac'@'localhost' (using password: YES) in /home/essimgas/public_html/ssubasta/lib/class.db.php on line 8
+[21-Mar-2013 15:06:44] PHP Warning:  mysql_select_db() expects parameter 2 to be resource, boolean given in /home/essimgas/public_html/ssubasta/lib/class.db.php on line 13
+[21-Mar-2013 15:06:44] PHP Warning:  session_start() [<a href='function.session-start'>function.session-start</a>]: Cannot send session cache limiter - headers already sent (output started at /home/essimgas/public_html/ssubasta/lib/class.db.php:8) in /home/essimgas/public_html/ssubasta/lib/class.sesion.php on line 5
+[21-Mar-2013 15:06:44] PHP Warning:  mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: Access denied for user 'essimgas_simulac'@'localhost' (using password: YES) in /home/essimgas/public_html/ssubasta/lib/class.db.php on line 8
+[21-Mar-2013 15:06:44] PHP Warning:  mysql_select_db() expects parameter 2 to be resource, boolean given in /home/essimgas/public_html/ssubasta/lib/class.db.php on line 13
+[21-Mar-2013 15:06:44] PHP Warning:  session_start() [<a href='function.session-start'>function.session-start</a>]: Cannot send session cache limiter - headers already sent (output started at /home/essimgas/public_html/ssubasta/lib/class.db.php:8) in /home/essimgas/public_html/ssubasta/lib/class.sesion.php on line 5
+[21-Mar-2013 15:06:45] PHP Warning:  mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: Access denied for user 'essimgas_simulac'@'localhost' (using password: YES) in /home/essimgas/public_html/ssubasta/lib/class.db.php on line 8
+[21-Mar-2013 15:06:45] PHP Warning:  mysql_select_db() expects parameter 2 to be resource, boolean given in /home/essimgas/public_html/ssubasta/lib/class.db.php on line 13
+[21-Mar-2013 15:06:45] PHP Warning:  session_start() [<a href='function.session-start'>function.session-start</a>]: Cannot send session cache limiter - headers already sent (output started at /home/essimgas/public_html/ssubasta/lib/class.db.php:8) in /home/essimgas/public_html/ssubasta/lib/class.sesion.php on line 5
+[21-Mar-2013 15:06:45] PHP Warning:  mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: Access denied for user 'essimgas_simulac'@'localhost' (using password: YES) in /home/essimgas/public_html/ssubasta/lib/class.db.php on line 8
+[21-Mar-2013 15:06:45] PHP Warning:  mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: Access denied for user 'essimgas_simulac'@'localhost' (using password: YES) in /home/essimgas/public_html/ssubasta/lib/class.db.php on line 8
+[21-Mar-2013 15:06:45] PHP Warning:  mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: Access denied for user 'essimgas_simulac'@'localhost' (using password: YES) in /home/essimgas/public_html/ssubasta/lib/class.db.php on line 8
+[21-Mar-2013 15:06:45] PHP Warning:  mysql_select_db() expects parameter 2 to be resource, boolean given in /home/essimgas/public_html/ssubasta/lib/class.db.php on line 13
+[21-Mar-2013 15:06:45] PHP Warning:  mysql_select_db() expects parameter 2 to be resource, boolean given in /home/essimgas/public_html/ssubasta/lib/class.db.php on line 13
+[21-Mar-2013 15:06:45] PHP Warning:  mysql_select_db() expects parameter 2 to be resource, boolean given in /home/essimgas/public_html/ssubasta/lib/class.db.php on line 13
+[21-Mar-2013 15:06:45] PHP Warning:  session_start() [<a href='function.session-start'>function.session-start</a>]: Cannot send session cache limiter - headers already sent (output started at /home/essimgas/public_html/ssubasta/lib/class.db.php:8) in /home/essimgas/public_html/ssubasta/lib/class.sesion.php on line 5
+[21-Mar-2013 15:06:45] PHP Warning:  session_start() [<a href='function.session-start'>function.session-start</a>]: Cannot send session cache limiter - headers already sent (output started at /home/essimgas/public_html/ssubasta/lib/class.db.php:8) in /home/essimgas/public_html/ssubasta/lib/class.sesion.php on line 5
+[21-Mar-2013 15:06:45] PHP Warning:  session_start() [<a href='function.session-start'>function.session-start</a>]: Cannot send session cache limiter - headers already sent (output started at /home/essimgas/public_html/ssubasta/lib/class.db.php:8) in /home/essimgas/public_html/ssubasta/lib/class.sesion.php on line 5
+[21-Mar-2013 15:27:38] PHP Warning:  mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: Access denied for user 'essimgas_simulac'@'localhost' (using password: YES) in /home/essimgas/public_html/ssubasta/lib/class.db.php on line 8
+[21-Mar-2013 15:27:38] PHP Warning:  mysql_select_db() expects parameter 2 to be resource, boolean given in /home/essimgas/public_html/ssubasta/lib/class.db.php on line 13
+[21-Mar-2013 15:27:38] PHP Warning:  session_start() [<a href='function.session-start'>function.session-start</a>]: Cannot send session cache limiter - headers already sent (output started at /home/essimgas/public_html/ssubasta/lib/class.db.php:8) in /home/essimgas/public_html/ssubasta/lib/class.sesion.php on line 5
+[21-Mar-2013 15:27:41] PHP Warning:  mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: Access denied for user 'essimgas_simulac'@'localhost' (using password: YES) in /home/essimgas/public_html/ssubasta/lib/class.db.php on line 8
+[21-Mar-2013 15:27:41] PHP Warning:  mysql_select_db() expects parameter 2 to be resource, boolean given in /home/essimgas/public_html/ssubasta/lib/class.db.php on line 13
+[21-Mar-2013 15:27:41] PHP Warning:  session_start() [<a href='function.session-start'>function.session-start</a>]: Cannot send session cache limiter - headers already sent (output started at /home/essimgas/public_html/ssubasta/lib/class.db.php:8) in /home/essimgas/public_html/ssubasta/lib/class.sesion.php on line 5
+[21-Mar-2013 15:28:24] PHP Warning:  mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: Access denied for user 'essimgas_simulac'@'localhost' (using password: YES) in /home/essimgas/public_html/ssubasta/lib/class.db.php on line 8
+[21-Mar-2013 15:28:24] PHP Warning:  mysql_select_db() expects parameter 2 to be resource, boolean given in /home/essimgas/public_html/ssubasta/lib/class.db.php on line 13
+[21-Mar-2013 15:28:24] PHP Warning:  session_start() [<a href='function.session-start'>function.session-start</a>]: Cannot send session cache limiter - headers already sent (output started at /home/essimgas/public_html/ssubasta/lib/class.db.php:8) in /home/essimgas/public_html/ssubasta/lib/class.sesion.php on line 5
+[21-Mar-2013 15:36:06] PHP Warning:  mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: Access denied for user 'essimgas_simulac'@'localhost' (using password: YES) in /home/essimgas/public_html/ssubasta/lib/class.db.php on line 8
+[21-Mar-2013 15:36:06] PHP Warning:  mysql_select_db() expects parameter 2 to be resource, boolean given in /home/essimgas/public_html/ssubasta/lib/class.db.php on line 13
+[21-Mar-2013 15:36:06] PHP Warning:  mysql_query() [<a href='function.mysql-query'>function.mysql-query</a>]: Access denied for user 'essimgas'@'localhost' (using password: NO) in /home/essimgas/public_html/ssubasta/lib/class.db.php on line 24
+[21-Mar-2013 15:36:06] PHP Warning:  mysql_query() [<a href='function.mysql-query'>function.mysql-query</a>]: A link to the server could not be established in /home/essimgas/public_html/ssubasta/lib/class.db.php on line 24
+[21-Mar-2013 15:36:06] PHP Warning:  mysql_close() expects parameter 1 to be resource, boolean given in /home/essimgas/public_html/ssubasta/lib/class.db.php on line 18
+[21-Mar-2013 15:36:06] PHP Warning:  mysql_num_rows() expects parameter 1 to be resource, boolean given in /home/essimgas/public_html/ssubasta/login.php on line 49
+[21-Mar-2013 15:36:06] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/essimgas/public_html/ssubasta/lib/class.db.php:8) in /home/essimgas/public_html/ssubasta/login.php on line 54
+[21-Mar-2013 15:42:32] PHP Warning:  mysql_num_rows() expects parameter 1 to be resource, boolean given in /home/essimgas/public_html/ssubasta/login.php on line 49
+[21-Mar-2013 15:42:32] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/essimgas/public_html/ssubasta/login.php:49) in /home/essimgas/public_html/ssubasta/login.php on line 54
+[21-Mar-2013 15:47:00] PHP Warning:  Invalid argument supplied for foreach() in /home/essimgas/public_html/ssubasta/lib/class.simulacion.php on line 855
+[21-Mar-2013 15:47:00] PHP Warning:  Invalid argument supplied for foreach() in /home/essimgas/public_html/ssubasta/lib/class.simulacion.php on line 855
+[21-Mar-2013 15:47:00] PHP Warning:  Invalid argument supplied for foreach() in /home/essimgas/public_html/ssubasta/lib/class.simulacion.php on line 855
+[21-Mar-2013 15:47:00] PHP Warning:  Invalid argument supplied for foreach() in /home/essimgas/public_html/ssubasta/lib/class.simulacion.php on line 855
+[21-Mar-2013 15:49:13] PHP Warning:  Invalid argument supplied for foreach() in /home/essimgas/public_html/ssubasta/lib/class.simulacion.php on line 855
+[21-Mar-2013 15:49:13] PHP Warning:  Invalid argument supplied for foreach() in /home/essimgas/public_html/ssubasta/lib/class.simulacion.php on line 855
+[21-Mar-2013 15:49:13] PHP Warning:  Invalid argument supplied for foreach() in /home/essimgas/public_html/ssubasta/lib/class.simulacion.php on line 855
+[21-Mar-2013 15:49:13] PHP Warning:  Invalid argument supplied for foreach() in /home/essimgas/public_html/ssubasta/lib/class.simulacion.php on line 855
+[21-Mar-2013 15:49:13] PHP Warning:  Invalid argument supplied for foreach() in /home/essimgas/public_html/ssubasta/lib/class.simulacion.php on line 855
+[21-Mar-2013 15:49:13] PHP Warning:  Invalid argument supplied for foreach() in /home/essimgas/public_html/ssubasta/lib/class.simulacion.php on line 855
+[21-Mar-2013 15:50:34] PHP Warning:  Invalid argument supplied for foreach() in /home/essimgas/public_html/ssubasta/lib/class.simulacion.php on line 855
+[21-Mar-2013 15:50:34] PHP Warning:  Invalid argument supplied for foreach() in /home/essimgas/public_html/ssubasta/lib/class.simulacion.php on line 855
+[21-Mar-2013 15:50:34] PHP Warning:  Invalid argument supplied for foreach() in /home/essimgas/public_html/ssubasta/lib/class.simulacion.php on line 855
+[21-Mar-2013 15:50:34] PHP Warning:  Invalid argument supplied for foreach() in /home/essimgas/public_html/ssubasta/lib/class.simulacion.php on line 855
+[21-Mar-2013 15:55:02] PHP Warning:  mysql_fetch_object(): supplied argument is not a valid MySQL result resource in /home/essimgas/public_html/ssubasta/iniciarEscenario.php on line 48
+[21-Mar-2013 15:55:04] PHP Warning:  mysql_fetch_object(): supplied argument is not a valid MySQL result resource in /home/essimgas/public_html/ssubasta/iniciarEscenario.php on line 48
+[21-Mar-2013 16:32:13] PHP Warning:  Invalid argument supplied for foreach() in /home/essimgas/public_html/ssubasta/lib/class.simulacion.php on line 73
+[21-Mar-2013 16:32:13] PHP Warning:  Invalid argument supplied for foreach() in /home/essimgas/public_html/ssubasta/lib/class.simulacion.php on line 73
+[21-Mar-2013 16:32:13] PHP Warning:  Invalid argument supplied for foreach() in /home/essimgas/public_html/ssubasta/lib/class.simulacion.php on line 73
+[21-Mar-2013 16:32:13] PHP Warning:  Invalid argument supplied for foreach() in /home/essimgas/public_html/ssubasta/lib/class.simulacion.php on line 73
+[21-Mar-2013 16:32:13] PHP Warning:  Invalid argument supplied for foreach() in /home/essimgas/public_html/ssubasta/lib/class.simulacion.php on line 73
+[21-Mar-2013 16:39:44] PHP Parse error:  syntax error, unexpected '{' in /home/essimgas/public_html/ssubasta/lib/class.simulacion.php on line 73
+[21-Mar-2013 16:40:39] PHP Parse error:  syntax error, unexpected '{' in /home/essimgas/public_html/ssubasta/lib/class.simulacion.php on line 73
+[25-Mar-2013 12:55:06] PHP Warning:  Invalid argument supplied for foreach() in /home/essimgas/public_html/ssubasta/lib/class.simulacion.php on line 857
+[25-Mar-2013 12:55:06] PHP Warning:  Invalid argument supplied for foreach() in /home/essimgas/public_html/ssubasta/lib/class.simulacion.php on line 857
+[25-Mar-2013 12:55:06] PHP Warning:  Invalid argument supplied for foreach() in /home/essimgas/public_html/ssubasta/lib/class.simulacion.php on line 857
+[25-Mar-2013 12:55:06] PHP Warning:  Invalid argument supplied for foreach() in /home/essimgas/public_html/ssubasta/lib/class.simulacion.php on line 857
+[25-Mar-2013 13:09:19] PHP Warning:  Invalid argument supplied for foreach() in /home/essimgas/public_html/ssubasta/lib/class.simulacion.php on line 857
+[25-Mar-2013 13:09:19] PHP Warning:  Invalid argument supplied for foreach() in /home/essimgas/public_html/ssubasta/lib/class.simulacion.php on line 857
+[25-Mar-2013 13:09:19] PHP Warning:  Invalid argument supplied for foreach() in /home/essimgas/public_html/ssubasta/lib/class.simulacion.php on line 857
+[25-Mar-2013 13:09:19] PHP Warning:  Invalid argument supplied for foreach() in /home/essimgas/public_html/ssubasta/lib/class.simulacion.php on line 857
+[25-Mar-2013 19:48:17] PHP Warning:  Invalid argument supplied for foreach() in /home/essimgas/public_html/ssubasta/lib/class.simulacion.php on line 20
+[25-Mar-2013 19:48:17] PHP Warning:  Invalid argument supplied for foreach() in /home/essimgas/public_html/ssubasta/lib/class.simulacion.php on line 20
+[25-Mar-2013 19:48:17] PHP Warning:  Invalid argument supplied for foreach() in /home/essimgas/public_html/ssubasta/lib/class.simulacion.php on line 20
+[25-Mar-2013 19:48:17] PHP Warning:  Invalid argument supplied for foreach() in /home/essimgas/public_html/ssubasta/lib/class.simulacion.php on line 20
+[25-Mar-2013 19:48:17] PHP Warning:  Invalid argument supplied for foreach() in /home/essimgas/public_html/ssubasta/lib/class.simulacion.php on line 20
+[25-Mar-2013 19:48:17] PHP Warning:  Invalid argument supplied for foreach() in /home/essimgas/public_html/ssubasta/lib/class.simulacion.php on line 20
+[25-Mar-2013 19:48:17] PHP Warning:  Invalid argument supplied for foreach() in /home/essimgas/public_html/ssubasta/lib/class.simulacion.php on line 59
+[25-Mar-2013 19:48:17] PHP Warning:  Invalid argument supplied for foreach() in /home/essimgas/public_html/ssubasta/simulacion.php on line 220
+[25-Mar-2013 19:48:17] PHP Warning:  array_keys() expects parameter 1 to be array, null given in /home/essimgas/public_html/ssubasta/simulacion.php on line 225
+[25-Mar-2013 19:48:17] PHP Warning:  implode() [<a href='function.implode'>function.implode</a>]: Invalid arguments passed in /home/essimgas/public_html/ssubasta/simulacion.php on line 225
+[25-Mar-2013 19:48:17] PHP Warning:  mysql_fetch_object(): supplied argument is not a valid MySQL result resource in /home/essimgas/public_html/ssubasta/simulacion.php on line 228
+[25-Mar-2013 19:48:17] PHP Warning:  Invalid argument supplied for foreach() in /home/essimgas/public_html/ssubasta/lib/class.simulacion.php on line 1323
+[25-Mar-2013 19:48:17] PHP Warning:  Invalid argument supplied for foreach() in /home/essimgas/public_html/ssubasta/simulacion.php on line 243
+[25-Mar-2013 19:48:17] PHP Warning:  Invalid argument supplied for foreach() in /home/essimgas/public_html/ssubasta/lib/class.simulacion.php on line 902
+[25-Mar-2013 19:48:17] PHP Warning:  Invalid argument supplied for foreach() in /home/essimgas/public_html/ssubasta/tpl/simulacion.php on line 28
+[25-Mar-2013 19:48:17] PHP Warning:  Invalid argument supplied for foreach() in /home/essimgas/public_html/ssubasta/tpl/simulacion.php on line 28
+[25-Mar-2013 19:48:17] PHP Warning:  Invalid argument supplied for foreach() in /home/essimgas/public_html/ssubasta/tpl/simulacion.php on line 28
+[25-Mar-2013 19:48:17] PHP Warning:  Invalid argument supplied for foreach() in /home/essimgas/public_html/ssubasta/tpl/simulacion.php on line 28
+[25-Mar-2013 19:48:17] PHP Warning:  Invalid argument supplied for foreach() in /home/essimgas/public_html/ssubasta/tpl/simulacion.php on line 28
+[25-Mar-2013 19:48:17] PHP Warning:  Invalid argument supplied for foreach() in /home/essimgas/public_html/ssubasta/tpl/simulacion.php on line 28
+[09-Apr-2013 08:35:58] PHP Warning:  mysql_fetch_object(): supplied argument is not a valid MySQL result resource in /home/essimgas/public_html/ssubasta/verEscenarios.php on line 44
+[09-Apr-2013 08:36:00] PHP Warning:  Invalid argument supplied for foreach() in /home/essimgas/public_html/ssubasta/lib/class.simulacion.php on line 2204
+[09-Apr-2013 08:36:00] PHP Warning:  Invalid argument supplied for foreach() in /home/essimgas/public_html/ssubasta/lib/class.simulacion.php on line 2204
+[09-Apr-2013 08:36:00] PHP Warning:  Invalid argument supplied for foreach() in /home/essimgas/public_html/ssubasta/lib/class.simulacion.php on line 2204
+[09-Apr-2013 08:36:00] PHP Warning:  Invalid argument supplied for foreach() in /home/essimgas/public_html/ssubasta/lib/class.simulacion.php on line 2204
+[09-Apr-2013 08:36:00] PHP Warning:  Invalid argument supplied for foreach() in /home/essimgas/public_html/ssubasta/lib/class.simulacion.php on line 2204
+[09-Apr-2013 08:36:00] PHP Warning:  Invalid argument supplied for foreach() in /home/essimgas/public_html/ssubasta/lib/class.simulacion.php on line 2204
+[09-Apr-2013 08:36:08] PHP Warning:  mysql_fetch_object(): supplied argument is not a valid MySQL result resource in /home/essimgas/public_html/ssubasta/verEscenarios.php on line 44
+[09-Apr-2013 08:36:16] PHP Warning:  mysql_fetch_object(): supplied argument is not a valid MySQL result resource in /home/essimgas/public_html/ssubasta/verEscenarios.php on line 44
+[14-Apr-2013 23:09:10] PHP Warning:  Invalid argument supplied for foreach() in /home/essimgas/public_html/ssubasta/lib/class.simulacion.php on line 21
+[14-Apr-2013 23:09:10] PHP Warning:  Invalid argument supplied for foreach() in /home/essimgas/public_html/ssubasta/lib/class.simulacion.php on line 21
+[14-Apr-2013 23:09:10] PHP Warning:  Invalid argument supplied for foreach() in /home/essimgas/public_html/ssubasta/lib/class.simulacion.php on line 21
+[14-Apr-2013 23:09:10] PHP Warning:  Invalid argument supplied for foreach() in /home/essimgas/public_html/ssubasta/lib/class.simulacion.php on line 21
+[14-Apr-2013 23:09:10] PHP Warning:  Invalid argument supplied for foreach() in /home/essimgas/public_html/ssubasta/lib/class.simulacion.php on line 21
+[14-Apr-2013 23:09:10] PHP Warning:  Invalid argument supplied for foreach() in /home/essimgas/public_html/ssubasta/lib/class.simulacion.php on line 21
+[14-Apr-2013 23:09:10] PHP Warning:  Invalid argument supplied for foreach() in /home/essimgas/public_html/ssubasta/lib/class.simulacion.php on line 60
+[14-Apr-2013 23:09:10] PHP Warning:  Invalid argument supplied for foreach() in /home/essimgas/public_html/ssubasta/simulacion.php on line 221
+[14-Apr-2013 23:09:10] PHP Warning:  array_keys() expects parameter 1 to be array, null given in /home/essimgas/public_html/ssubasta/simulacion.php on line 226
+[14-Apr-2013 23:09:10] PHP Warning:  implode() [<a href='function.implode'>function.implode</a>]: Invalid arguments passed in /home/essimgas/public_html/ssubasta/simulacion.php on line 226
+[14-Apr-2013 23:09:10] PHP Warning:  mysql_fetch_object(): supplied argument is not a valid MySQL result resource in /home/essimgas/public_html/ssubasta/simulacion.php on line 229
+[14-Apr-2013 23:09:10] PHP Warning:  Invalid argument supplied for foreach() in /home/essimgas/public_html/ssubasta/lib/class.simulacion.php on line 1519
+[14-Apr-2013 23:09:10] PHP Warning:  Invalid argument supplied for foreach() in /home/essimgas/public_html/ssubasta/simulacion.php on line 244
+[14-Apr-2013 23:09:10] PHP Warning:  Invalid argument supplied for foreach() in /home/essimgas/public_html/ssubasta/lib/class.simulacion.php on line 1098
+[14-Apr-2013 23:09:10] PHP Warning:  Invalid argument supplied for foreach() in /home/essimgas/public_html/ssubasta/lib/class.simulacion.php on line 2204
+[14-Apr-2013 23:09:10] PHP Warning:  Invalid argument supplied for foreach() in /home/essimgas/public_html/ssubasta/lib/class.simulacion.php on line 2204
+[14-Apr-2013 23:09:10] PHP Warning:  Invalid argument supplied for foreach() in /home/essimgas/public_html/ssubasta/lib/class.simulacion.php on line 2204
+[14-Apr-2013 23:09:10] PHP Warning:  Invalid argument supplied for foreach() in /home/essimgas/public_html/ssubasta/lib/class.simulacion.php on line 2204
+[14-Apr-2013 23:09:10] PHP Warning:  Invalid argument supplied for foreach() in /home/essimgas/public_html/ssubasta/lib/class.simulacion.php on line 2204
+[14-Apr-2013 23:09:10] PHP Warning:  Invalid argument supplied for foreach() in /home/essimgas/public_html/ssubasta/lib/class.simulacion.php on line 2204
+[14-Apr-2013 23:09:10] PHP Warning:  Invalid argument supplied for foreach() in /home/essimgas/public_html/ssubasta/lib/class.simulacion.php on line 2246
+[14-Apr-2013 23:09:10] PHP Warning:  Invalid argument supplied for foreach() in /home/essimgas/public_html/ssubasta/tpl/simulacion.php on line 33
+[14-Apr-2013 23:09:10] PHP Warning:  Invalid argument supplied for foreach() in /home/essimgas/public_html/ssubasta/tpl/simulacion.php on line 33
+[14-Apr-2013 23:09:10] PHP Warning:  Invalid argument supplied for foreach() in /home/essimgas/public_html/ssubasta/tpl/simulacion.php on line 33
+[14-Apr-2013 23:09:10] PHP Warning:  Invalid argument supplied for foreach() in /home/essimgas/public_html/ssubasta/tpl/simulacion.php on line 33
+[14-Apr-2013 23:09:10] PHP Warning:  Invalid argument supplied for foreach() in /home/essimgas/public_html/ssubasta/tpl/simulacion.php on line 33
+[14-Apr-2013 23:09:10] PHP Warning:  Invalid argument supplied for foreach() in /home/essimgas/public_html/ssubasta/tpl/simulacion.php on line 33
+[15-Apr-2013 23:19:08] PHP Warning:  Invalid argument supplied for foreach() in /home/essimgas/public_html/ssubasta/lib/class.simulacion.php on line 21
+[15-Apr-2013 23:19:08] PHP Warning:  Invalid argument supplied for foreach() in /home/essimgas/public_html/ssubasta/lib/class.simulacion.php on line 21
+[15-Apr-2013 23:19:08] PHP Warning:  Invalid argument supplied for foreach() in /home/essimgas/public_html/ssubasta/lib/class.simulacion.php on line 21
+[15-Apr-2013 23:19:08] PHP Warning:  Invalid argument supplied for foreach() in /home/essimgas/public_html/ssubasta/lib/class.simulacion.php on line 21
+[15-Apr-2013 23:19:08] PHP Warning:  Invalid argument supplied for foreach() in /home/essimgas/public_html/ssubasta/lib/class.simulacion.php on line 21
+[15-Apr-2013 23:19:08] PHP Warning:  Invalid argument supplied for foreach() in /home/essimgas/public_html/ssubasta/lib/class.simulacion.php on line 21
+[15-Apr-2013 23:19:08] PHP Warning:  Invalid argument supplied for foreach() in /home/essimgas/public_html/ssubasta/lib/class.simulacion.php on line 60
+[15-Apr-2013 23:19:08] PHP Warning:  Invalid argument supplied for foreach() in /home/essimgas/public_html/ssubasta/simulacion.php on line 221
+[15-Apr-2013 23:19:08] PHP Warning:  array_keys() expects parameter 1 to be array, null given in /home/essimgas/public_html/ssubasta/simulacion.php on line 226
+[15-Apr-2013 23:19:08] PHP Warning:  implode() [<a href='function.implode'>function.implode</a>]: Invalid arguments passed in /home/essimgas/public_html/ssubasta/simulacion.php on line 226
+[15-Apr-2013 23:19:08] PHP Warning:  mysql_fetch_object(): supplied argument is not a valid MySQL result resource in /home/essimgas/public_html/ssubasta/simulacion.php on line 229
+[15-Apr-2013 23:19:08] PHP Warning:  Invalid argument supplied for foreach() in /home/essimgas/public_html/ssubasta/lib/class.simulacion.php on line 1519
+[15-Apr-2013 23:19:08] PHP Warning:  Invalid argument supplied for foreach() in /home/essimgas/public_html/ssubasta/simulacion.php on line 244
+[15-Apr-2013 23:19:08] PHP Warning:  Invalid argument supplied for foreach() in /home/essimgas/public_html/ssubasta/lib/class.simulacion.php on line 1098
+[15-Apr-2013 23:19:08] PHP Warning:  Invalid argument supplied for foreach() in /home/essimgas/public_html/ssubasta/lib/class.simulacion.php on line 2204
+[15-Apr-2013 23:19:08] PHP Warning:  Invalid argument supplied for foreach() in /home/essimgas/public_html/ssubasta/lib/class.simulacion.php on line 2204
+[15-Apr-2013 23:19:08] PHP Warning:  Invalid argument supplied for foreach() in /home/essimgas/public_html/ssubasta/lib/class.simulacion.php on line 2204
+[15-Apr-2013 23:19:08] PHP Warning:  Invalid argument supplied for foreach() in /home/essimgas/public_html/ssubasta/lib/class.simulacion.php on line 2204
+[15-Apr-2013 23:19:08] PHP Warning:  Invalid argument supplied for foreach() in /home/essimgas/public_html/ssubasta/lib/class.simulacion.php on line 2204
+[15-Apr-2013 23:19:08] PHP Warning:  Invalid argument supplied for foreach() in /home/essimgas/public_html/ssubasta/lib/class.simulacion.php on line 2204
+[15-Apr-2013 23:19:08] PHP Warning:  Invalid argument supplied for foreach() in /home/essimgas/public_html/ssubasta/lib/class.simulacion.php on line 2246
+[15-Apr-2013 23:19:08] PHP Warning:  Invalid argument supplied for foreach() in /home/essimgas/public_html/ssubasta/tpl/simulacion.php on line 33
+[15-Apr-2013 23:19:08] PHP Warning:  Invalid argument supplied for foreach() in /home/essimgas/public_html/ssubasta/tpl/simulacion.php on line 33
+[15-Apr-2013 23:19:08] PHP Warning:  Invalid argument supplied for foreach() in /home/essimgas/public_html/ssubasta/tpl/simulacion.php on line 33
+[15-Apr-2013 23:19:08] PHP Warning:  Invalid argument supplied for foreach() in /home/essimgas/public_html/ssubasta/tpl/simulacion.php on line 33
+[15-Apr-2013 23:19:08] PHP Warning:  Invalid argument supplied for foreach() in /home/essimgas/public_html/ssubasta/tpl/simulacion.php on line 33
+[15-Apr-2013 23:19:08] PHP Warning:  Invalid argument supplied for foreach() in /home/essimgas/public_html/ssubasta/tpl/simulacion.php on line 33
+[16-Apr-2013 16:43:49] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/essimgas/public_html/ssubasta/lib/class.simulacion.php:1015) in /home/essimgas/public_html/ssubasta/simulacion.php on line 137
+[23-Apr-2013 17:28:10] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/essimgas/public_html/ssubasta/lib/class.simulacion.php:1015) in /home/essimgas/public_html/ssubasta/simulacion.php on line 137
