@@ -87,7 +87,7 @@
 		$tmpComprador .= '<td> ' . $row->nombre . ' </td>';
 		$tmpTipo = (isset($tmpDem[$row->id]['tipo'])) ? $tmpDem[$row->id]['tipo'] : 'A';
 		$tmpComprador .= '<td> ' . creaSelectTipo ($row->id, $tmpTipo) . ' </td>';
-		$tmpComprador .= '<td> <input name="demanda[' . $row->id . ']" class="input-mini" id="demanda' . $contador .'" type="text" onkeyup="esCorrectoDouble(this)" value="';
+		$tmpComprador .= '<td> <input name="demanda[' . $row->id . ']" class="input-mini" id="demanda' . $row->id .'" type="text" onkeyup="esCorrectoDouble(this)" value="';
 		$tmpComprador .= (isset ($tmpDem[$row->id]['demanda'])) ? $tmpDem[$row->id]['demanda'] : '';
 		$tmpComprador .= '"> </td>';
 		

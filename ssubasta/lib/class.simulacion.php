@@ -1,6 +1,5 @@
 <?php 
 class simulacion {	
-	
 	/*
 	* Este método calcula las demandas y ofertas para la primera ronda, a la que se refiere como Ronda 0.
 	* Se escoge el menor precio de los ofertadores por campo y producto y se suma las ofertas que tengan ese mismo precio.
@@ -70,8 +69,6 @@ class simulacion {
 				$nombreProductoOtro = '';
 				$nombreProductoDemanda = '';
 				
-
-				
 				foreach($productos as $producto) {
 				  if (isset ($rondasCorridastmp[$ronda][$producto]['campo']))
 					foreach($rondasCorridastmp[$ronda][$producto]['campo'] as $idCampo) {
@@ -95,7 +92,8 @@ class simulacion {
 						
 					
 						//Si la oferta es cero, el producto no existe o la demanda es cero, no debe entrar a realizar ofertas
-						if($oferta > 0 && !empty($tmpArrayDemanda[$idComprador][$nombreProductoDemanda]) && $tmpArrayDemanda[$idComprador][$nombreProductoDemanda][$posCiudad] > 0) {
+//						if($oferta > 0 && !empty($tmpArrayDemanda[$idComprador][$nombreProductoDemanda]) && $tmpArrayDemanda[$idComprador][$nombreProductoDemanda][$posCiudad] > 0) {
+						if($oferta > 0 && !empty($tmpArrayDemanda[$idComprador][$nombreProductoDemanda]) ) {	
 						
 							$idCampoTemp = $idCampo['idCampo'];
 							$precioGas = $idCampo['precio'];
@@ -144,8 +142,6 @@ class simulacion {
 					}
 
 				}
-
-				
 				
 				//Asigna las demandas al firme y/o al otro 
 				if($precioTotalFirme <= $precioTotalOtro) {
@@ -379,54 +375,30 @@ class simulacion {
 							$mejoresPrecios = $this->buscarMenoresPrecios($unSesion, $ultimaRonda, $tmpComprador['idCiudad']);				
 
 						$continuar = true ;
-/*						$continuar = true ;	
-						if ($tmpSumaTransporteActual == $tmpSumaTransporteNuevo) {
-							$continuar = false;
-							break ;
-							}
-	*/							
-	//							
+
 							if ($llaveProducto == 'firme' || $llaveProducto == 'firmeC') {
 								$tmpSumaTransporteActual = $tmpArrayTransporte[$tmpComprador['idCiudad'] .'|'. $tmpCampo['idCampo']] + $tmpCampo['precio'] ;
 								$tmpSumaTransporteNuevo = $mejoresPrecios[0] ;
-/*								
-								echo "<pre>";
-								print_r($tmpArrayTransporte[$tmpComprador['idCiudad'] .'|'. $tmpCampo['idCampo']] + $tmpCampo['precio']) ;
-								echo "<hr>";
-								print_r($tmpComprador['idCiudad'] ) ;
-								echo "<hr>";
-								print_r($tmpCampo['idCampo']) ;
-								echo "<hr>";
-								print_r($tmpCampo['precio']) ;
-								echo "</pre>";																	 
-	*/							
+
 								$P0 = $rondaComparacion[$llaveProducto]['campo'][$llaveCampo]['precio'] + $tmpArrayTransporte[$tmpComprador['idCiudad'] .'|'. $tmpCampo['idCampo']] ;
 								$Q0 = $tmpComprador['demanda'] ;
 								$e1 = $tmpComprador['elasticidad'] ;  
 								
-//								echo $tmpComprador['idComprador'] ." //// ". $tmpComprador['idCiudad'] ." //// ".$tmpSumaTransporteActual ." //// ".  $tmpSumaTransporteNuevo . "<br>" ;
-								
 								if ($tmpSumaTransporteActual <= $tmpSumaTransporteNuevo )  {
 									$nuevaDemanda = $this->calcularQ1conElasticidad($Q0, $tmpSumaTransporteActual, $P0, $e1) ;
 									if ($tmpComprador['demanda'] > 0) {
-//										echo "Inicio queda " . $nuevaDemanda . "<br />";
 										$tmpComprador['demandaQ'] = $nuevaDemanda ;
 										$tmpArraySeQuedan[] = $tmpComprador;
 									}
-						//			echo "Quedan " . $tmpComprador['demanda'] ." - - " . $nuevaDemanda . "</br>" ;
 								}
 								// se guarda en un arrray los compradores que se quieren ir
 								else {
 									$nuevaDemanda = $this->calcularQ1conElasticidad($Q0, $tmpSumaTransporteNuevo, $P0, $e1) ;
 									if ($tmpComprador['demanda'] > 0) {
-//										echo "Inicio salen " . $nuevaDemanda . "<br />";
 										$tmpComprador['demandaQ'] = $nuevaDemanda ;
 										$tmpArraySalen[] = $tmpComprador;
 									}
-						//			echo "Salen " . $tmpComprador['demanda'] ." - - " . $nuevaDemanda . "</br>" ;
 								}
-//								echo "Nueva demanda  = " . $nuevaDemanda . "<br />" ;
-						//		echo " Producto " . $llaveProducto . " Campo " . $llaveCampo . " Transporte anterior " . $P0 .  " Transporte actual " . $tmpSumaTransporteActual . " Transporte nuevo " . $tmpSumaTransporteNuevo . "<br />";
 							}
 							elseif ($llaveProducto == 'condicional' || $llaveProducto == 'condicionalC') {
 								$tmpSumaTransporteActual = $tmpArrayTransporte[$tmpComprador['idCiudad'] .'|'. $tmpCampo['idCampo']] + $tmpCampo['precio'] ;
@@ -460,17 +432,6 @@ class simulacion {
 								$Q0 = $tmpComprador['demanda'] ;
 								$e1 = $tmpComprador['elasticidad'] ;
 
-								/**echo "Q0 = " . $Q0 . "<br />" ;
-								echo "P0 = " . $P0 . "<br />" ;
-								echo "e1 = " . $e1 . "<br />" ;
-								echo "tmpSumaTransporteActual = " . $tmpSumaTransporteActual . "<br />" ;
-								echo "Precio campo ronda actual = " . $tmpCampo['precio']  . "<br />" ;
-								echo "Precio transporte de " . $tmpComprador['idCiudad']. " a ". $tmpCampo['idCampo'] ." = " . $tmpArrayTransporte[$tmpComprador['idCiudad'] .'|'. $tmpCampo['idCampo']] . "<br />" ;
-
-								echo "tmpSumaTransporteNuevo = " . $tmpSumaTransporteNuevo . "<br />" ;
-								echo "Precio campo ronda nueva = " . $mejoresPrecios[1]   . "<br />" ;
-								echo "Precio transporte nuevo de " . $tmpComprador['idCiudad']. " a ". $mejoresPrecios[4] ." = " . $tmpArrayTransporte[$tmpComprador['idCiudad'] .'|'. $mejoresPrecios[4]] . "<br />" ;¨*/
-																
 								if ($tmpSumaTransporteActual <= $tmpSumaTransporteNuevo )  {
 									$nuevaDemanda = $this->calcularQ1conElasticidad($Q0, $tmpSumaTransporteActual, $P0, $e1) ;
 									if ($tmpComprador['demanda'] > 0) {
@@ -486,8 +447,6 @@ class simulacion {
 										$tmpArraySalen[] = $tmpComprador;
 									}
 								}
-								
-							//	echo "Nueva demanda  = " . $nuevaDemanda . "<br />" ;
 							}
 						}
 					
@@ -497,14 +456,6 @@ class simulacion {
 					
 				if ($continuar) {
 
-/*					
-					echo "<pre>";
-					print_r ($tmpArraySeQuedan);
-					echo "//-------------------------------------------------------------------//";
-					print_r ($tmpArraySalen);
-					echo "</pre>";										
-	*/				
-					
 					$tmpSumaSalen = 0;
 					if (isset($tmpArraySalen))
 					foreach ($tmpArraySalen as $salen) {
@@ -532,27 +483,33 @@ class simulacion {
 						$pC = ($tmpOfertaCampo - $tmpSumaQuedan) / $tmpSumaSalen ;
 					}
 					
-//					echo "Nelson  oferta campo " . $tmpOfertaCampo  ;
-//					echo "  suma quedan " . $tmpSumaQuedan . " suma salen " .  $tmpSumaSalen . " pC = " . $pC . "<br /> " ;
-
 					$tmpArrayAgregar = array () ;
+					
+					$tmpSumaDiferencias = 0;
+					foreach ($tmpArraySeQuedan as $llaveSeQuedan => $seQuedan) {
+						$tmpSumaDiferencias += $seQuedan['demanda'] - $seQuedan['demandaQ'];
+					}
+					foreach ($tmpArraySalen as $llaveSalen => $salen) {
+						$tmpSumaDiferencias += $salen['demanda'] - $salen['demandaQ'];
+					}
+					
 					
 					$tmpResta = count($tmpArraySeQuedan) ;
 					//Se actualiza las lista de compradores por campo que se quedan
 					foreach ($tmpArraySeQuedan as $llaveSeQuedad => $seQuedan) {
 						// si la suma demandaQ de los que se quedan es menor a la oferta y todos se quedan 
 						// no se toma la demandaQ, se toma la demanda
-						if ($tmpOfertaCampo > $tmpSumaQuedan && $tmpSumaSalen == 0 ) {
-//							echo $pC . " Alonso<br />" ; 
+						if ($tmpOfertaCampo > $tmpSumaQuedan) {
+							$pC = ($seQuedan['demanda'] - $seQuedan['demandaQ'])/$tmpSumaDiferencias;
 							if ($tmpResta == 1)
 								$seQuedan['demanda'] = $tmpOfertaCampo ;
-							else
-								$seQuedan['demanda'] = $seQuedan['demanda'] * $pC ; 
-						}
-						// si la suma demandaQ de los que se quedan es menor a la oferta y sumado los que salen es mayor o igual a la oferta
-						// se toma la demandaQ
-						elseif ($tmpOfertaCampo > $tmpSumaQuedan && $tmpOfertaCampo > ($tmpSumaSalen + $tmpSumaQuedan) ) {
-							$seQuedan['demanda'] = $seQuedan['demanda'] * $pC ;
+							else {
+								$tmpCalculo = ($pC * ($tmpOfertaCampo - $tmpSumaQuedan));
+								if($tmpCalculo < 0)
+									$tmpCalculo = 0;
+								
+								$seQuedan['demanda'] = $tmpCalculo + $seQuedan['demandaQ'];
+							}
 						}
 						// si no entonces la demanda sigue igual
 						else
@@ -561,16 +518,16 @@ class simulacion {
 						// se asigan el nuevo valor de comprador en los que se quedan
 						$tmpArraySeQuedan[$llaveSeQuedad] = $seQuedan;
 					}
-
-
 					
 					// se actualizan los regisros para los que se quieren ir
 					foreach ($tmpArraySalen as $llaveSalen => $salen) {
 						// si todos se van y la suman demandaQ > a la oferta hay que dejar lo que tiene 
 						// tomo la demandaQ resto lo que debe dejar
-						if ($tmpSumaQuedan == 0 && $tmpSumaSalen > $tmpOfertaCampo) {
+						if ($tmpSumaQuedan == 0) {
 							$tmpSalen = $salen;
-							$debeDejar = $salen['demanda'] * $pC ;
+							$pC = $salen['demandaQ']/$tmpSumaSalen;
+							$debeDejar = $pC * $tmpOfertaCampo;
+							
 							if(count($tmpArraySalen)==1) {
 								$tmpSalen['demanda'] = $tmpOfertaCampo;		
 								$salen['demanda']  = $tmpSalen['demandaQ'] - $tmpOfertaCampo ;
@@ -587,68 +544,28 @@ class simulacion {
 							unset ($tmpSalen['demandaQ']) ;
 							$tmpArrayAgregar[] = $tmpSalen ;
 						}
-						// si la suma de los que salen es menor a la oferta todos se quieren ir tomo la demanda 
-						elseif ($tmpSumaQuedan == 0 && $tmpSumaSalen <= $tmpOfertaCampo) {
-							$tmpSalen = $salen;
-							$debeDejar = $salen['demanda'] * $pC ;
-							if(count($tmpArraySalen)==1) {
-								$tmpSalen['demanda'] = $tmpOfertaCampo;		
-								$salen['demanda']  = 0 ;
-							}			
-							elseif($debeDejar < $salen['demandaQ']) {
-								$tmpSalen['demanda'] = $debeDejar;
-								$salen['demanda'] = $salen['demandaQ'] - $debeDejar;;
-							}
-							else {
-								$tmpSalen['demanda'] = $debeDejar;
-								$salen['demanda']  = 0;
-							}
-				//			$tmpSalen['demanda'] = $tmpSalen['demanda'] - $salen['demanda'] ;
-							unset ($tmpSalen['demandaQ']) ;
-							$tmpArrayAgregar[] = $tmpSalen ;
-						}
 						// si la suma de los que se quedan es mayor a cero y menor a la oferta
 						// se busca la diferencia de lo que hace falta y se  resta
 						elseif ($tmpSumaQuedan > 0 && $tmpSumaQuedan < $tmpOfertaCampo) {
 							$tmpSalen = $salen;
-							$demandaCorrecta = $this->calcularDemandaCorrecta($tmpArraySeQuedan, $pC);
-							$saleDemandaCorrecta = $this->calcularSaleDemandaCorrecta($tmpArraySalen, $pC);
-							// miro que la suma de los que se quedan mas la demandaQ sea igual o mayor a la oferta
-							if (($demandaCorrecta + $tmpSumaSalen ) > $tmpOfertaCampo) {
-						//		echo "dos<br />";
-								$tmpResta = $tmpOfertaCampo - $demandaCorrecta ;
-								$porcentajeAquitarSalen = $tmpResta / $saleDemandaCorrecta ;
-								
-								if(count($tmpArraySalen)==1) {
-									$tmpSalen['demanda'] = $tmpResta ;
-									if($salen['demandaQ'] <= $tmpResta)
-										$salen['demanda']  = 0 ;
-									else
-										$salen['demanda']  = $salen['demandaQ'] - $tmpResta ;
-								}				
-								elseif(($tmpResta * $porcentajeAquitarSalen) < $salen['demandaQ']) {
-									$tmpSalen['demanda'] = $tmpResta * $porcentajeAquitarSalen;
-									$salen['demanda'] = $salen['demandaQ'] - $tmpSalen['demanda'];
-								}
-								else {
-									$tmpSalen['demanda'] = $tmpResta * $porcentajeAquitarSalen;
-									$salen['demanda']  = 0;
-								}
+							$pC = ($salen['demanda'] - $salen['demandaQ'])/$tmpSumaDiferencias;
+							
+							if (count($tmpArraySalen) == 1) {
+								$tmpSalen['demanda'] = $tmpOfertaCampo ;
+								$salen['demanda'] = $salen['demandaQ'] - $salen['demanda'];
 							}
 							else {
-						//		echo "tres<br />";
-								$tmpSalen = $salen;
-								$salen['demanda'] = $salen['demanda'] - ($salen['demanda'] * $pC ) ;
-								$tmpSalen['demanda'] = $tmpSalen['demanda'] - $salen['demanda'] ; 
+								$tmpSalen['demanda'] = $pC * ($tmpOfertaCampo - $tmpSumaQuedan);
+								$salen['demanda'] = $salen['demandaQ'] - $salen['demanda'];
 							}
-							
+	
 							unset ($tmpSalen['demandaQ']) ;
 							$tmpArrayAgregar[] = $tmpSalen ;
 						}
 						elseif ($tmpSumaQuedan > 0 && $tmpSumaQuedan >= $tmpOfertaCampo) {
 							$salen['demanda'] = $salen['demandaQ'];
 						}
-							
+						
 						unset ($salen['demandaQ']) ;
 						$tmpArraySalen[$llaveSalen] = $salen ;	
 					}
@@ -658,10 +575,6 @@ class simulacion {
 					$tmpArraySalen = $this->formatoNumeroSumaIgualesDemanda ($tmpArraySalen) ;
 					$tmpArraySeQuedan = $this->formatoNumeroSumaIgualesDemanda ($tmpArraySeQuedan) ;
 					
-//					$tmpArraySeQuedan = array_merge ($tmpArraySeQuedan, $tmpArrayAgregar);
-//					$tmpArraySeQuedan = $tmpArraySeQuedan + $tmpArrayAgregar;
-//					$tmpArraySeQuedan = $this->formatoNumeroSumaIgualesDemanda ($tmpArraySeQuedan) ;
-
 					$ultimaRonda[$llaveProducto]['campo'][$llaveCampo]['comprador'] = $tmpArraySeQuedan ;
 	
 					// Ahora hay que asignar las demandas sobrantes a otro campo
@@ -856,7 +769,7 @@ class simulacion {
 	 * Este método modifica los precios de un producto de un vendedor de acuerdo al porcentaje ingresado.
 	 * También actualiza las empresas que van a participar en la oferta.
 	 */
-	function darDemandaPorcentual ($rondas, $ronda, $tmpArrayVendedor, $valorP, $idCampo, $tipoProducto) {
+	function darDemandaPorcentual ($rondas, $ronda, $tmpArrayVendedor, $valorP, $idCampo, $tipoProducto, $tmpListaVendedores) {
 		//Asignamos el nombre correcto del tipo de producto
 		$tipoProductoReal = $this->darNombreValorProductoReal2($tipoProducto);
 		$productoReal = $this->darNombreProducto2($tipoProducto);
@@ -880,16 +793,17 @@ class simulacion {
 				//Se agrega las empresas que van a entrar en la oferta
 				$rondas[$ronda][$tipoProducto]['campo'][$idCampo]['empresa'][$idEmpresa]['idEmpresa'] = $idEmpresa;
 				$rondas[$ronda][$tipoProducto]['campo'][$idCampo]['empresa'][$idEmpresa]['oferta'] = $vendedor[$productoReal];
+				$tmpListaVendedores[$idCampoEmpresa][$tipoProductoReal] = $valorPorcentual; 
 			}
 		}		
-		return $rondas;			
+		return array( 0=>$rondas, 1=>$tmpListaVendedores);
 	}
 
 	/*
 	 * Este método modifica los precios de un producto de un vendedor de acuerdo al cálculo tipo nominal
 	 * También actualiza las empresas que van a participar en la oferta para el campo_producto al que se le hace el incremento.
 	 */
-	function darDemandaNominal ($rondas, $ronda, $tmpArrayVendedor, $valorP, $idCampo, $tipoProducto) {
+	function darDemandaNominal ($rondas, $ronda, $tmpArrayVendedor, $valorP, $idCampo, $tipoProducto, $tmpListaVendedores) {
 		//Asignamos el nombre correcto del tipo de producto
 		$tipoProductoReal = $this->darNombreValorProductoReal2($tipoProducto);
 		$productoReal = $this->darNombreProducto2($tipoProducto);
@@ -912,16 +826,17 @@ class simulacion {
 				//Se agrega las empresas que van a entrar en la oferta
 				$rondas[$ronda][$tipoProducto]['campo'][$idCampo]['empresa'][$idEmpresa]['idEmpresa'] = $idEmpresa;
 				$rondas[$ronda][$tipoProducto]['campo'][$idCampo]['empresa'][$idEmpresa]['oferta'] = $vendedor[$productoReal];
+				$tmpListaVendedores[$idCampoEmpresa][$tipoProductoReal] = $valorNominal;
 			}
 		}		
-		return $rondas;			
+		return array( 0=>$rondas, 1=>$tmpListaVendedores);
 	}
 	
 	/*
 	 * Este método modifica los precios de un producto de un vendedor de acuerdo al nuevo valor ingresado
 	 * También actualiza las empresas que van a participar en la oferta para el campo_producto al que se le hace el incremento.
 	 */
-	function darDemandaNuevoValor ($rondas, $ronda, $tmpArrayVendedor, $valorP, $idCampo, $tipoProducto) {
+	function darDemandaNuevoValor ($rondas, $ronda, $tmpArrayVendedor, $valorP, $idCampo, $tipoProducto, $tmpListaVendedores) {
 		
 		//Asignamos el nombre correcto del tipo de producto
 		$tipoProductoReal = $this->darNombreValorProductoReal2($tipoProducto);
@@ -944,9 +859,10 @@ class simulacion {
 				//Se agrega las empresas que van a entrar en la oferta
 				$rondas[$ronda][$tipoProducto]['campo'][$idCampo]['empresa'][$idEmpresa]['idEmpresa'] = $idEmpresa;
 				$rondas[$ronda][$tipoProducto]['campo'][$idCampo]['empresa'][$idEmpresa]['oferta'] = $vendedor[$productoReal];
+				$tmpListaVendedores[$idCampoEmpresa][$tipoProductoReal] = $valorP;
 			}
 		}
-		return $rondas;			
+		return array( 0=>$rondas, 1=>$tmpListaVendedores);
 	}
 	
 	/*
@@ -954,10 +870,11 @@ class simulacion {
 	 * conteo de cuantas veces se le ha hecho este tipo de incremento a es campo_producto
 	 * También actualiza las empresas que van a participar en la oferta para el campo_producto al que se le hace el incremento.
 	 */
-	function darDemandaValorOptimo ($rondas, $ronda, $tmpArrayVendedor, $idCampo, $tipoProducto) {
+	function darDemandaValorOptimo ($rondas, $ronda, $tmpArrayVendedor, $idCampo, $tipoProducto, $tmpListaVendedores) {
 		
 		//Asignamos el nombre correcto del valor de acuerdo al tipo de producto
 		$nombreValorProductoActual = $this->darNombreValorProductoReal2($tipoProducto);
+		
 		//Asignamos el nombre correcto del tipo de producto
 		$nombreProductoActual = $this->darNombreProductoReal($tipoProducto);
 		
@@ -971,45 +888,45 @@ class simulacion {
 		
 		//Se busca el siguiente precio para fijo
 		if($tipoProducto == 'firme' || $tipoProducto == 'firmeC') {
-			$tmp = $this->calculaValorSiguienteYAgregado($tmpUltimaRonda, $tmpArrayVendedor, 'firme', $valorSiguiente, $valorActual, $valorSiguienteAgregado, $idCampo);
+			$tmp = $this->calculaValorSiguienteYAgregado($tmpUltimaRonda, $tmpListaVendedores, 'firme', $valorSiguiente, $valorActual, $valorSiguienteAgregado, $idCampo);
 			$valorSiguiente = $tmp[0];
 			$valorSiguienteAgregado = $tmp[1];
 			
-			$tmp = $this->calculaValorSiguienteYAgregado($tmpUltimaRonda, $tmpArrayVendedor, 'firmeC', $valorSiguiente, $valorActual, $valorSiguienteAgregado, $idCampo);
+			$tmp = $this->calculaValorSiguienteYAgregado($tmpUltimaRonda, $tmpListaVendedores, 'firmeC', $valorSiguiente, $valorActual, $valorSiguienteAgregado, $idCampo);
 			$valorSiguiente = $tmp[0];
 			$valorSiguienteAgregado = $tmp[1];
 		}
 		elseif($tipoProducto == 'condicional' || $tipoProducto == 'condicional') {
-			$tmp = $this->calculaValorSiguienteYAgregado($tmpUltimaRonda, $tmpArrayVendedor, 'firme', $valorSiguiente, $valorActual, $valorSiguienteAgregado, $idCampo);
+			$tmp = $this->calculaValorSiguienteYAgregado($tmpUltimaRonda, $tmpListaVendedores, 'firme', $valorSiguiente, $valorActual, $valorSiguienteAgregado, $idCampo);
 			$valorSiguiente = $tmp[0];
 			$valorSiguienteAgregado = $tmp[1];
 			
-			$tmp = $this->calculaValorSiguienteYAgregado($tmpUltimaRonda, $tmpArrayVendedor, 'firmeC', $valorSiguiente, $valorActual, $valorSiguienteAgregado, $idCampo);
+			$tmp = $this->calculaValorSiguienteYAgregado($tmpUltimaRonda, $tmpListaVendedores, 'firmeC', $valorSiguiente, $valorActual, $valorSiguienteAgregado, $idCampo);
 			$valorSiguiente = $tmp[0];
 			$valorSiguienteAgregado = $tmp[1];
 			
-			$tmp = $this->calculaValorSiguienteYAgregado($tmpUltimaRonda, $tmpArrayVendedor, 'condicional', $valorSiguiente, $valorActual, $valorSiguienteAgregado, $idCampo);
+			$tmp = $this->calculaValorSiguienteYAgregado($tmpUltimaRonda, $tmpListaVendedores, 'condicional', $valorSiguiente, $valorActual, $valorSiguienteAgregado, $idCampo);
 			$valorSiguiente = $tmp[0];
 			$valorSiguienteAgregado = $tmp[1];
 			
-			$tmp = $this->calculaValorSiguienteYAgregado($tmpUltimaRonda, $tmpArrayVendedor, 'condicionalC', $valorSiguiente, $valorActual, $valorSiguienteAgregado, $idCampo);
+			$tmp = $this->calculaValorSiguienteYAgregado($tmpUltimaRonda, $tmpListaVendedores, 'condicionalC', $valorSiguiente, $valorActual, $valorSiguienteAgregado, $idCampo);
 			$valorSiguiente = $tmp[0];
 			$valorSiguienteAgregado = $tmp[1];
 		}
 		elseif($tipoProducto == 'opcional' || $tipoProducto == 'opcionalU') {
-			$tmp = $this->calculaValorSiguienteYAgregado($tmpUltimaRonda, $tmpArrayVendedor, 'firme', $valorSiguiente, $valorActual, $valorSiguienteAgregado, $idCampo);
+			$tmp = $this->calculaValorSiguienteYAgregado($tmpUltimaRonda, $tmpListaVendedores, 'firme', $valorSiguiente, $valorActual, $valorSiguienteAgregado, $idCampo);
 			$valorSiguiente = $tmp[0];
 			$valorSiguienteAgregado = $tmp[1];
 			
-			$tmp = $this->calculaValorSiguienteYAgregado($tmpUltimaRonda, $tmpArrayVendedor, 'firmeC', $valorSiguiente, $valorActual, $valorSiguienteAgregado, $idCampo);
+			$tmp = $this->calculaValorSiguienteYAgregado($tmpUltimaRonda, $tmpListaVendedores, 'firmeC', $valorSiguiente, $valorActual, $valorSiguienteAgregado, $idCampo);
 			$valorSiguiente = $tmp[0];
 			$valorSiguienteAgregado = $tmp[1];
 			
-			$tmp = $this->calculaValorSiguienteYAgregado($tmpUltimaRonda, $tmpArrayVendedor, 'opcional', $valorSiguiente, $valorActual, $valorSiguienteAgregado, $idCampo);
+			$tmp = $this->calculaValorSiguienteYAgregado($tmpUltimaRonda, $tmpListaVendedores, 'opcional', $valorSiguiente, $valorActual, $valorSiguienteAgregado, $idCampo);
 			$valorSiguiente = $tmp[0];
 			$valorSiguienteAgregado = $tmp[1];
 			
-			$tmp = $this->calculaValorSiguienteYAgregado($tmpUltimaRonda, $tmpArrayVendedor, 'opcionalC', $valorSiguiente, $valorActual, $valorSiguienteAgregado, $idCampo);
+			$tmp = $this->calculaValorSiguienteYAgregado($tmpUltimaRonda, $tmpListaVendedores, 'opcionalC', $valorSiguiente, $valorActual, $valorSiguienteAgregado, $idCampo);
 			$valorSiguiente = $tmp[0];
 			$valorSiguienteAgregado = $tmp[1];			
 		}
@@ -1020,7 +937,7 @@ class simulacion {
 		$rondas[$ronda][$tipoProducto]['campo'][$idCampo]['numCorridasValorOptimo'] = $numVecesCorridas + 1;
 
 		//Se actualiza el valor siguiente agregado, sólo si el valorSiguiente es menor al valor siguiente agregado y mayor al valor actual
-		$valorSiguienteAgregado = ($valorSiguiente > $valorActual && $valorSiguiente < $valorSiguienteAgregado) ? $valorSiguiente : $valorSiguienteAgregado;
+		//$valorSiguienteAgregado = ($valorSiguiente > $valorActual && $valorSiguiente < $valorSiguienteAgregado) ? $valorSiguiente : $valorSiguienteAgregado;
 		
 		//Realiza los calculos finales para el valor optimo
 		$valorOptimo = 0;
@@ -1034,7 +951,7 @@ class simulacion {
 		}
 		else
 			$valorOptimo = $valorSiguienteAgregado;
-				
+		
 		//Se actualiza el costo del campo
 		$rondas[$ronda][$tipoProducto]['campo'][$idCampo]['precio'] = $valorOptimo;
 		
@@ -1052,10 +969,11 @@ class simulacion {
 				//Se agrega las empresas que van a entrar en la oferta
 				$rondas[$ronda][$tipoProducto]['campo'][$idCampo]['empresa'][$idEmpresa]['idEmpresa'] = $idEmpresa;
 				$rondas[$ronda][$tipoProducto]['campo'][$idCampo]['empresa'][$idEmpresa]['oferta'] = $vendedor[$productoReal];
+				$tmpListaVendedores[$idCampoEmpresa][$tipoProductoReal] = $valorOptimo;
 			}
 		}
 		
-		return $rondas;
+		return array( 0=>$rondas, 1=>$tmpListaVendedores);
 	}
 	
 	/* 
@@ -1088,38 +1006,6 @@ class simulacion {
 				//En este estado se busca un valor menor a siguiente pero mayor al actual
 				elseif($valorSiguienteAgregado > $valorActual && $vendedor[$producto] > $valorActual && $vendedor[$producto] < $valorSiguienteAgregado) {
 					$valorSiguienteAgregado = $vendedor[$producto];
-				}
-			}
-		}
-
-		return $this->calculaValorSiguienteYAgregadoCampos($ronda, $tipoProducto, $valorSiguiente, $valorActual, $valorSiguienteAgregado, $idCampo);;
-	}
-	
-	/* 
-	 * Esta función busca dentro del campo el valor siguiente y por fuera del campo el valor siguiente agregado
-	 */
-	function calculaValorSiguienteYAgregadoCampos($ronda, $tipoProducto, $valorSiguiente, $valorActual, $valorSiguienteAgregado, $idCampo) {
-		foreach ($ronda[$tipoProducto]['campo'] as $campo) {
-			if(isset ($campo['idCampo'])) {
-				if($campo['idCampo'] == $idCampo) {
-					//En este estado se busca cualquier valor siguiente
-					if($valorSiguiente == $valorActual && $campo['precio'] > $valorSiguiente) {
-						$valorSiguiente = $campo['precio'];
-					}
-					//En este estado se busca un valor menor a siguiente pero mayor al actual
-					elseif($valorSiguiente > $valorActual && $campo['precio'] > $valorActual && $campo['precio'] < $valorSiguiente) {
-						$valorSiguiente = $campo['precio'];
-					}
-				}
-				else {
-					//En este estado se busca cualquier valor siguienteAgregado
-					if($valorSiguienteAgregado == $valorActual && $campo['precio'] > $valorSiguienteAgregado) {
-						$valorSiguienteAgregado = $campo['precio'];
-					}
-					//En este estado se busca un valor menor a siguiente pero mayor al actual
-					elseif($valorSiguienteAgregado > $valorActual && $campo['precio'] > $valorActual && $campo['precio'] < $valorSiguienteAgregado) {
-						$valorSiguienteAgregado = $campo['precio'];
-					}
 				}
 			}
 		}

@@ -231,7 +231,6 @@
             	<?php echo $rondasCorridas ; ?>
             </tbody>            
         </table>
-            	<?php echo $ronda ; ?>
         <?php if ($ronda==0) { echo '<a class="btn" onclick="href=\'transporte.php\'">atrás</a>';} ?>
                                
 		</form>

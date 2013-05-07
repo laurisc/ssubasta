@@ -75,6 +75,7 @@
 				var demanda = document.getElementById( "demanda" + j);
 				var demandaSumada = darValorDemanda(j);
 				//alert(estaEscogido + "--" + i + "--" + demanda.value + "--" + demandaSumada);
+
 				if(demanda.value == "" )
 				{
 					alert("Por favor revisar la demanda de los compradores. Mirar la fila " + j + ".");
@@ -116,44 +117,44 @@
 		var dato1 = document.getElementsByName("dFirmeC[" + fila + "][]");
 		for (i=0;i<dato1.length;i++)
 		{
-			if(parseInt(dato1[i].value)>0)
-				suma += parseInt(dato1[i].value);
+			if(parseFloat(dato1[i].value)>0)
+				suma += parseFloat(dato1[i].value);
 		}
 		
 
 		var dato1 = document.getElementsByName( "dFirme[" + fila + "][]");
 		for (i=0;i<dato1.length;i++)
 		{
-			if(parseInt(dato1[i].value)>0)
-				suma += parseInt(dato1[i].value);
+			if(parseFloat(dato1[i].value)>0)
+				suma += parseFloat(dato1[i].value);
 		}
 
 		var dato1 = document.getElementsByName( "dOcgC[" + fila + "][]");
 		for (i=0;i<dato1.length;i++)
 		{
-			if(parseInt(dato1[i].value)>0)
-				suma += parseInt(dato1[i].value);
+			if(parseFloat(dato1[i].value)>0)
+				suma += parseFloat(dato1[i].value);
 		}
 
 		var dato1 = document.getElementsByName( "dOcgU[" + fila + "][]");
 		for (i=0;i<dato1.length;i++)
 		{
-			if(parseInt(dato1[i].value)>0)
-				suma += parseInt(dato1[i].value);
+			if(parseFloat(dato1[i].value)>0)
+				suma += parseFloat(dato1[i].value);
 		}
 
 		var dato1 = document.getElementsByName( "dCfcC[" + fila + "][]");
 		for (i=0;i<dato1.length;i++)
 		{
-			if(parseInt(dato1[i].value)>0)
-				suma += parseInt(dato1[i].value);
+			if(parseFloat(dato1[i].value)>0)
+				suma += parseFloat(dato1[i].value);
 		}
 
 		var dato1 = document.getElementsByName( "dCfcU[" + fila + "][]");
 		for (i=0;i<dato1.length;i++)
 		{
-			if(parseInt(dato1[i].value)>0)
-				suma += parseInt(dato1[i].value);
+			if(parseFloat(dato1[i].value)>0)
+				suma += parseFloat(dato1[i].value);
 		}
 		return suma;
 	}

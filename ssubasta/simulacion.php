@@ -75,8 +75,13 @@
 	else	
 		$guardarEscenario = 'Clic <a href="#modalGuardar" role="button"  data-toggle="modal">aquí</a> para guardar cambios';
 
+	$tmpListaVendedores = $unSesion->obtenerVariable ('listaVendedores');
+	if (!isset($tmpValores) || count($tmpValores)==1)	{
+		$tmpArrayVendedor = $unSesion->obtenerVariable ('listVendedor');
+		$unSesion->registrarVariable ('listaVendedores', $tmpArrayVendedor);
+	}	
+
 	
-		
 	/* Si es enviada la variable correrRonda se asume que se correra la siguiente ronda  */
 	$entro = false;
 	if (isset ($_POST['correrRonda']) ) {
@@ -90,7 +95,6 @@
 		$unSesion->registrarVariable ('rondas', $rondas) ;	
 		$tmpArrayVendedor = $unSesion->obtenerVariable('listVendedor');
 		
-		
 		foreach ($_POST['campoProductoProximaRonda'] as $llave => $valorTemp) {
 			$tmp = explode("|", $valorTemp);
 			$producto = $tmp[0];
@@ -103,23 +107,31 @@
 			// si es porcentual y el campo se lleno con un valor se ejecuta el incremento
 			if ($valor == 1 && $_POST['fila'][$llave] != ""  ) {
 				$entro = true;
-				$rondas = 
-				$unSimulacion->darDemandaPorcentual ($rondas, $ronda, $tmpArrayVendedor, $_POST['fila'][$llave], $idCampo, $producto) ;
+				$tmp2 = 
+				$unSimulacion->darDemandaPorcentual ($rondas, $ronda, $tmpArrayVendedor, $_POST['fila'][$llave], $idCampo, $producto, $tmpListaVendedores) ;
+				$rondas = $tmp2[0];
+				$tmpListaVendedores = $tmp2[1];
 				}
 			elseif ($valor == 2 && $_POST['fila'][$llave] != "" ) {
 				$entro = true;
-				$rondas = 
-				$unSimulacion->darDemandaNominal ($rondas, $ronda, $tmpArrayVendedor, $_POST['fila'][$llave], $idCampo, $producto) ;
+				$tmp2 = 
+				$unSimulacion->darDemandaNominal ($rondas, $ronda, $tmpArrayVendedor, $_POST['fila'][$llave], $idCampo, $producto, $tmpListaVendedores) ;
+				$rondas = $tmp2[0];
+				$tmpListaVendedores = $tmp2[1];
 				}
 			elseif ($valor == 3 && $_POST['fila'][$llave] != "" ) {
 				$entro = true;
-				$rondas = 
-				$unSimulacion->darDemandaNuevoValor ($rondas, $ronda, $tmpArrayVendedor, $_POST['fila'][$llave], $idCampo, $producto) ;
+				$tmp2 = 
+				$unSimulacion->darDemandaNuevoValor ($rondas, $ronda, $tmpArrayVendedor, $_POST['fila'][$llave], $idCampo, $producto, $tmpListaVendedores) ;
+				$rondas = $tmp2[0];
+				$tmpListaVendedores = $tmp2[1];
 				}
 			elseif ($valor == 4) {
 				$entro = true;
-				$rondas = 
-				$unSimulacion->darDemandaValorOptimo ($rondas, $ronda, $tmpArrayVendedor, $idCampo, $producto) ;
+				$tmp2 = 
+				$unSimulacion->darDemandaValorOptimo ($rondas, $ronda, $tmpArrayVendedor, $idCampo, $producto, $tmpListaVendedores) ;
+				$rondas = $tmp2[0];
+				$tmpListaVendedores = $tmp2[1];
 			}
 		}
 		
@@ -134,7 +146,8 @@
 		$unSesion->registrarVariable ('rondas', $rondas) ;	
 		$unSesion->registrarVariable ('numeroRonda', $ronda) ;		
 		$unSesion->registrarVariable ('listVendedorModificables', $tmpArrayVendedor);
-//		header("location: simulacion.php") ;
+		$unSesion->registrarVariable ('listaVendedores', $tmpListaVendedores);
+		//		header("location: simulacion.php") ;
 	}
 
 

@@ -21,14 +21,14 @@
 			<col width="6%">
 			<thead>
 				<tr>
+					<th>&nbsp;  </th>
 					<th>&nbsp; </th>
+					<th>&nbsp;  </th>
 					<th>&nbsp; </th>
+					<th>&nbsp;  </th>
+					<th>&nbsp;  </th>
 					<th>&nbsp; </th>
-					<th>&nbsp; </th>
-					<th>&nbsp; </th>
-					<th>&nbsp; </th>
-					<th>&nbsp; </th>
-					<th>&nbsp; </th>
+					<th>&nbsp;  </th>
 					<th colspan=3 align="center" > 1 año </th>
 					<th colspan=3 align="center" > 5 años </th>
 					<th>&nbsp; </th>
